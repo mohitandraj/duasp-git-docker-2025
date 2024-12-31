@@ -1,0 +1,16 @@
+
+services:
+  flask_welcome_2025:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_APP=app.py
+    volumes:
+      - .:/app
+    networks:
+      - flask_network
+
+networks:
+  flask_network:
+    driver: bridge
